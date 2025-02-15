@@ -44,4 +44,4 @@ python $utils_dir/genelab-get-urls.py --data-dir . --study-id $study_id --raw
 cat "OSD-${study_id}-urls.txt" | parallel -j$num_threads wget -nv {}
 
 # Remove prefix in all files
-rename -d "download?source=datamanager&file=" *
+# rename -d "download?source=datamanager&file=" *
