@@ -34,7 +34,7 @@ fi
 utils_dir=$PWD/utils
 
 # Change to genelab data directory
-wd=${data_dir}/OSD-${study_id}
+wd=${data_dir}
 mkdir -p $wd && cd $wd
 
 # Get list of files (URLs)
