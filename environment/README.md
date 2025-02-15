@@ -5,7 +5,7 @@
 ```bash
 mamba create -n esa-hack -y
 
-mamba activate -n esa-hack
+mamba activate esa-hack
 ```
 
 
