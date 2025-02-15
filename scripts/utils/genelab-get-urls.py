@@ -3,8 +3,6 @@ import requests
 
 import argparse
 
-from tqdm import tqdm
-
 import pandas as pd
 
 
