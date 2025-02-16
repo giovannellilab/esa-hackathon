@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name="hmmer"
+#SBATCH --job-name="genelab"
 #SBATCH --time=160:00:00
 #SBATCH --cpus-per-task=10
 #SBATCH --mem=10G
