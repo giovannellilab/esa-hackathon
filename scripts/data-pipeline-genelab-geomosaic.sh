@@ -48,9 +48,10 @@ rename -d "download?source=datamanager&file=" *
 
 for file in *_raw.fastq.gz; do
 
-  # Sort sequences to avoid errors with Kaiju
+  # Fix IDs to avoid errors with Kaiju
   gzip -d -c $file | \
-    seqkit sort -N -i -o ${file%_raw.fastq.gz}_sorted.fastq.gz
+    seqkit replace -p "\.1 |\.2 " -r " " --f-by-name \
+      -o ${file%_raw.fastq.gz}_idfixed.fastq.gz
 
   # Remove raw file to free some storage
   rm $file
