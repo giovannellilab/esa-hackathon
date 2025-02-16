@@ -47,6 +47,12 @@ cat "OSD-${study_id}-urls.txt" | parallel -j$num_threads wget -nv {}
 rename -d "download?source=datamanager&file=" *
 
 for file in *_raw.fastq.gz; do
+
+  # Sort sequences to avoid errors with Kaiju
   gzip -d -c $file | \
     seqkit sort -N -i -o ${file%_raw.fastq.gz}_sorted.fastq.gz
+
+  # Remove raw file to free some storage
+  rm $file
+
 done
