@@ -45,3 +45,8 @@ cat "OSD-${study_id}-urls.txt" | parallel -j$num_threads wget -nv {}
 
 # Remove prefix in all files
 rename -d "download?source=datamanager&file=" *
+
+for file in *_raw.fastq.gz; do
+  gzip -d -c $file | \
+    seqkit sort -N -i -o ${file%_raw.fastq.gz}_sorted.fastq.gz
+done
