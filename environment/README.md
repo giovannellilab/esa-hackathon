@@ -14,7 +14,7 @@ mamba activate esa-hack
 ```bash
 pip install requests
 mamba install -c conda-forge ncbi-datasets-cli antismash pandas ipykernel -y
-mamba install -c bioconda ncbi-genome-download -y
+mamba install -c bioconda ncbi-genome-download seqkit -y
 ```
 
 
